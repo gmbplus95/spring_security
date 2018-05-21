@@ -15,7 +15,10 @@ public class User {
 	@Column
 	private String password;
 	@Column
+	private Boolean active;
+	@Column
 	private List<String> role;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -30,11 +33,19 @@ public class User {
 	}
 
 
-	public User(String username, String password, List<String> role) {
+	
+	public User(String username, String password, Boolean active, List<String> role) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.active = active;
 		this.role = role;
+	}
+	public Boolean getActive() {
+		return active;
+	}
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 	public List<String> getRole() {
 		return role;
@@ -49,6 +60,7 @@ public class User {
 		this.username=user.username;
 		this.password=user.password;
 		this.role=user.role;
+		this.active=user.active;
 		// TODO Auto-generated constructor stub
 	}
 	
